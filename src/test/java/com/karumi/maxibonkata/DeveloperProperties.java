@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 public class DeveloperProperties {
 
     public static final String MAXIBONS_NUMBER = "Maxibons Numbers: %s , Developer's Maxibons: %s";
+    public static final String NAME_IS_EQUALS_TO_ANOTHER_NAME = "%s is equals to %s";
 
     @Property
     public void aDeveloperHaveANumberOfMaxibonsGreaterOrEqualsThanZero(
@@ -23,5 +24,17 @@ public class DeveloperProperties {
                 numberOfMaxibons, developer.getNumberOfMaxibonsToGrab()));
 
         Assert.assertTrue(developer.getNumberOfMaxibonsToGrab() >= 0);
+    }
+
+    @Property
+    public void whenADeveloperIsCreatedTheNameIsEqualThanParameterGiven(final String developerName) {
+        
+        final int numberOfMaxibons = 0;
+        final Developer developer = new Developer(developerName, numberOfMaxibons);
+
+        System.out.println(String.format(NAME_IS_EQUALS_TO_ANOTHER_NAME,
+                developer.getName(), developerName));
+
+        Assert.assertEquals(developer.getName(), developerName);
     }
 }
