@@ -18,7 +18,7 @@ public class DeveloperProperties {
             final int numberOfMaxibons) {
 
         final String developerName = "Paco";
-        final Developer developer = new Developer (developerName, numberOfMaxibons);
+        final Developer developer = new Developer(developerName, numberOfMaxibons);
 
         System.out.println(String.format(MAXIBONS_NUMBER,
                 numberOfMaxibons, developer.getNumberOfMaxibonsToGrab()));
@@ -28,7 +28,7 @@ public class DeveloperProperties {
 
     @Property
     public void whenADeveloperIsCreatedTheNameIsEqualThanParameterGiven(final String developerName) {
-        
+
         final int numberOfMaxibons = 0;
         final Developer developer = new Developer(developerName, numberOfMaxibons);
 
